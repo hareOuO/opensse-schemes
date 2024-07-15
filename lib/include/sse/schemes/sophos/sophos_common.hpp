@@ -20,9 +20,9 @@
 
 #pragma once
 
-#include <sse/crypto/key.hpp>
-#include <sse/crypto/prf.hpp>
-#include <sse/crypto/tdp.hpp>
+#include "../../../../../third_party/crypto/src/include/sse/crypto/key.hpp"
+#include "../../../../../third_party/crypto/src/include/sse/crypto/prf.hpp"
+#include "../../../../../third_party/crypto/src/include/sse/crypto/tdp.hpp"
 
 #include <array>
 #include <string>
@@ -52,6 +52,9 @@ struct UpdateRequest
     update_token_type token;
     index_type        index;
 };
+static inline bool is_base64(unsigned char c);
+std::string base64_encode(const std::string &data);
+std::string base64_decode(std::string const& encoded_string);
 
 void gen_update_token_masks(const crypto::Prf<kUpdateTokenSize>& derivation_prf,
                             const uint8_t*                       search_token,
