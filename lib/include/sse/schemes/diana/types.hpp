@@ -21,7 +21,7 @@
 
 #pragma once
 
-#include <sse/crypto/rcprf.hpp>
+#include "../../../../../third_party/crypto/src/include/sse/crypto/rcprf.hpp"
 
 namespace sse {
 namespace diana {

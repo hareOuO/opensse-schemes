@@ -21,12 +21,27 @@
 
 #pragma once
 
-#include <sse/schemes/diana/types.hpp>
+#include "types.hpp"
 
 #include <cstring>
 
 namespace sse {
 namespace diana {
+
+//gai
+struct diana_UpdateRequest
+{
+    update_token_type token;
+    std::string index;
+};
+
+// struct new_SearchRequest
+// {
+//     // std::list<std::pair<search_token_key_type, uint8_t>> token_list;
+//     keyword_token_type     kw_token;
+//     constrained_rcprf_type constrained_rcprf;
+//     uint32_t               add_count;
+// };
 
 void gen_update_token_mask(uint8_t*           search_token,
                            update_token_type& update_token,
